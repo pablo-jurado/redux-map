@@ -21,7 +21,7 @@ export const actions = {
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [UPDATE_PORTS]    : (state, action) => state + action.payload
+  [UPDATE_PORTS]    : (state, action) => state = action.payload
 };
 
 // ------------------------------------

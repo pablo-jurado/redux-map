@@ -18,6 +18,7 @@ const LAYER_DEFS = [
 export default class PortMap extends React.PureComponent {
   static propTypes = {
     className: PropTypes.string,
+    updatePorts: PropTypes.func
   }
 
   render() {
@@ -110,8 +111,8 @@ export default class PortMap extends React.PureComponent {
     });
 
     const data = await response.json();
-    // TODO: update store
-    console.log('data.ports', data.ports);
+    // update store with ports
+    this.props.updatePorts(data.ports);
     return data.ports;
   }
 
