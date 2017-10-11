@@ -6,17 +6,6 @@ import './Header.scss';
 const Header = ({ className }) => (
   <div className={className}>
     <h1>Expero Shipping Planner</h1>
-    <IndexLink to="/" activeClassName="route--active">
-      Home
-    </IndexLink>
-    {/*
-    {' · '}
-    <Link to="/counter" activeClassName="route--active">
-      Counter
-    </Link>
-     */
-     
-     console.log(className)}
   </div>
 );
 

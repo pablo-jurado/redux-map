@@ -1,24 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Nav = ({ className, state }) => {
-  console.log('state', state.ports);
-  // state.updatePorts(['hello']);
-  function update () {
-    state.updatePorts(['hello']);
-  }
-  
+const Nav = ({ className, ports }) => {
+  console.log('state', ports);
+  const portsCollection = ports.map((port, index)=> {
+    return <div key={index}>{port.name}</div>
+  });
   return (
     <div className={className}>
-      Nav
-      <button onClick={update}> test </button>
+      {portsCollection}
     </div>
   )
 };
 
 Nav.propTypes = {
   className: PropTypes.string,
-  state: PropTypes.object
+  ports: PropTypes.array.isRequired
 };
 
 export default Nav;

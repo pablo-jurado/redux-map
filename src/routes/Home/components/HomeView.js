@@ -3,18 +3,13 @@ import './HomeView.scss';
 import PortMap from 'components/PortMap';
 import Nav from 'components/Nav';
 
-export const HomeView = (store) => {
-
-  // store.updatePorts(['port3'])
-  // console.log('HomeView', store.ports);
-  
-  return (
-    <div>
-      <h4>Port Map</h4>
-      <Nav className="core-layout__nav" state={store} />
-      <PortMap className="home--portMap" updatePorts={store.updatePorts} />
+export const HomeView = (store) => (
+    <div className="main__wrapper">
+      <Nav className="map__nav" ports={store.ports} />
+      <div className="map__wrapper">
+        <PortMap className="home--portMap" updatePorts={store.updatePorts} />
+      </div>
     </div>
-  )
-};
+  );
 
 export default HomeView;
